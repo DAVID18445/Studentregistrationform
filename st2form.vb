@@ -43,9 +43,23 @@
 
     End Sub
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Dim result As DialogResult
 
-        Application.Exit()
+        result = MessageBox.Show(
+        "Are you sure you want to exit?",
+        "Confirm Exit",
+        MessageBoxButtons.YesNo,
+        MessageBoxIcon.Question)
 
+        If result = DialogResult.Yes Then
+            Application.Exit()
+        End If
     End Sub
-
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+        If ComboBox1.SelectedIndex <> -1 Then
+            lblProgramme.Text = "Selected Programme: " & ComboBox1.Text
+        Else
+            lblProgramme.Text = "Selected Programme: None"
+        End If
+    End Sub
 End Class

@@ -34,12 +34,14 @@ Partial Class st2form
         TextBox1 = New TextBox()
         BackgroundWorker1 = New ComponentModel.BackgroundWorker()
         GroupBox1 = New GroupBox()
+        lblProgramme = New Label()
+        GroupBox1.SuspendLayout()
         SuspendLayout()
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.BackColor = Color.Silver
+        Label1.BackColor = Color.FromArgb(CByte(255), CByte(192), CByte(192))
         Label1.Font = New Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label1.Location = New Point(74, 24)
         Label1.Name = "Label1"
@@ -135,19 +137,30 @@ Partial Class st2form
         ' 
         ' GroupBox1
         ' 
-        GroupBox1.BackColor = Color.SaddleBrown
+        GroupBox1.BackColor = Color.FromArgb(CByte(255), CByte(192), CByte(192))
+        GroupBox1.Controls.Add(lblProgramme)
         GroupBox1.Location = New Point(-8, 92)
         GroupBox1.Name = "GroupBox1"
         GroupBox1.Size = New Size(738, 425)
         GroupBox1.TabIndex = 4
         GroupBox1.TabStop = False
         ' 
+        ' lblProgramme
+        ' 
+        lblProgramme.AutoSize = True
+        lblProgramme.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblProgramme.Location = New Point(365, 106)
+        lblProgramme.Name = "lblProgramme"
+        lblProgramme.Size = New Size(244, 25)
+        lblProgramme.TabIndex = 0
+        lblProgramme.Text = "Selected Programme: None"
+        ' 
         ' st2form
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = Color.PeachPuff
-        ClientSize = New Size(729, 517)
+        BackColor = Color.FromArgb(CByte(255), CByte(192), CByte(192))
+        ClientSize = New Size(1015, 517)
         Controls.Add(TextBox1)
         Controls.Add(ComboBox2)
         Controls.Add(ComboBox1)
@@ -161,6 +174,8 @@ Partial Class st2form
         Controls.Add(GroupBox1)
         Name = "st2form"
         Text = "st2form"
+        GroupBox1.ResumeLayout(False)
+        GroupBox1.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -177,4 +192,5 @@ Partial Class st2form
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
     Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents lblProgramme As Label
 End Class

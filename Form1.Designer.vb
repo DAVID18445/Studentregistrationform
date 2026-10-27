@@ -34,6 +34,8 @@ Partial Class Form1
         Button3 = New Button()
         Label1 = New Label()
         TextBox1 = New TextBox()
+        lblCharacterCount = New Label()
+        lblNameCount = New Label()
         SuspendLayout()
         ' 
         ' Label2
@@ -94,11 +96,11 @@ Partial Class Form1
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.BackColor = Color.Gray
-        Label5.Font = New Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label5.Location = New Point(95, 4)
+        Label5.BackColor = Color.Transparent
+        Label5.Font = New Font("Book Antiqua", 16F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label5.Location = New Point(31, 9)
         Label5.Name = "Label5"
-        Label5.Size = New Size(500, 45)
+        Label5.Size = New Size(551, 39)
         Label5.TabIndex = 0
         Label5.Text = "REGISTER YOUR COURSES HERE"
         ' 
@@ -149,12 +151,33 @@ Partial Class Form1
         TextBox1.Size = New Size(328, 31)
         TextBox1.TabIndex = 11
         ' 
+        ' lblCharacterCount
+        ' 
+        lblCharacterCount.AutoSize = True
+        lblCharacterCount.Location = New Point(305, 135)
+        lblCharacterCount.Name = "lblCharacterCount"
+        lblCharacterCount.Size = New Size(0, 25)
+        lblCharacterCount.TabIndex = 12
+        ' 
+        ' lblNameCount
+        ' 
+        lblNameCount.AutoSize = True
+        lblNameCount.BackColor = Color.FromArgb(CByte(128), CByte(64), CByte(64))
+        lblNameCount.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblNameCount.Location = New Point(466, 135)
+        lblNameCount.Name = "lblNameCount"
+        lblNameCount.Size = New Size(127, 25)
+        lblNameCount.TabIndex = 13
+        lblNameCount.Text = "Characters:  0"
+        ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(255), CByte(224), CByte(192))
-        ClientSize = New Size(690, 535)
+        ClientSize = New Size(652, 535)
+        Controls.Add(lblNameCount)
+        Controls.Add(lblCharacterCount)
         Controls.Add(TextBox1)
         Controls.Add(Label1)
         Controls.Add(Button3)
@@ -184,5 +207,7 @@ Partial Class Form1
     Friend WithEvents Button3 As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents lblCharacterCount As Label
+    Friend WithEvents lblNameCount As Label
 
 End Class
